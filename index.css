@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-aurora {
+  background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #0c4a6e);
+  background-size: 400% 400%;
+  animation: aurora 20s ease infinite;
+}
+
+@keyframes pulse-glow-red {
+    0%, 100% {
+      box-shadow: 0 0 12px 2px rgba(239, 68, 68, 0.6); /* red-500 */
+      border-color: rgba(248, 113, 113, 0.8); /* red-400 */
+    }
+    50% {
+      box-shadow: 0 0 20px 5px rgba(239, 68, 68, 0.9);
+      border-color: rgba(252, 165, 165, 1); /* red-300 */
+    }
+}
+
+.voice-card-playing {
+  border-color: #ef4444 !important; /* red-500 */
+  animation: pulse-glow-red 2s ease-in-out infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(56, 189, 248, 0.4); }
+  50% { border-color: rgba(56, 189, 248, 1); }
+}
+
+.voice-card-loading {
+  animation: pulse-border 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
